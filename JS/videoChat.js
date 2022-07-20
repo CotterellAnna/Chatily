@@ -101,7 +101,6 @@ getusermedia(
         //generating offer/answer and displaying it into the user-Id element
         peer.on('signal', function(data){
             userId.value = JSON.stringify(data)
-            // console.log(JSON.stringify(data))
         })
 
         //taking the value offer/answer from peer
@@ -235,8 +234,8 @@ getusermedia(
         endCallBtn.addEventListener("click", () => {
             peer.destroy()
             //reseting the localvideo size
-            videoSize(remoteVideo, localVideo)
-            remoteVideo.remove()
+            // videoSize(remoteVideo, localVideo)
+            // remoteVideo.remove()
         })
 
         //to swap the video call frames
@@ -265,7 +264,6 @@ getusermedia(
         function notTyping(){
             clearTimeout(timer)
             timer = setTimeout(()=> {
-                console.log("nobody's typing")
                 let content = ""
                 sendData({
                     type: "typing",

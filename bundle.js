@@ -2809,7 +2809,6 @@ getusermedia(
         //generating offer/answer and displaying it into the user-Id element
         peer.on('signal', function(data){
             userId.value = JSON.stringify(data)
-            // console.log(JSON.stringify(data))
         })
 
         //taking the value offer/answer from peer
@@ -2943,8 +2942,8 @@ getusermedia(
         endCallBtn.addEventListener("click", () => {
             peer.destroy()
             //reseting the localvideo size
-            videoSize(remoteVideo, localVideo)
-            remoteVideo.remove()
+            // videoSize(remoteVideo, localVideo)
+            // remoteVideo.remove()
         })
 
         //to swap the video call frames
@@ -2973,7 +2972,6 @@ getusermedia(
         function notTyping(){
             clearTimeout(timer)
             timer = setTimeout(()=> {
-                console.log("nobody's typing")
                 let content = ""
                 sendData({
                     type: "typing",
@@ -3036,30 +3034,18 @@ function getTime(){
 
 
 function videoSize(smallVideo, bigVideo){
-    if(bigVideo.classList.contains("smallVideo")){
-        console.log(smallVideo)
 
-        // bigVideo.classList.remove("smallVideo")
-        // bigVideo.classList.add("bigVideo")
+    if(bigVideo.classList.contains("smallVideo")){
         bigVideo.classList.replace("smallVideo", "bigVideo")
     }else{
         bigVideo.classList.add("bigVideo")
     }
-    console.log(smallVideo)
 
     if(smallVideo.classList.contains("bigVideo")){
-        console.log(bigVideo)
-
-        // smallVideo.classList.remove("bigVideo")
-        // bigVideo.classList.add("smallVideo")
         smallVideo.classList.replace("bigVideo", "smallVideo")
     }else{
         bigVideo.classList.add("smallVideo")
     }
-    console.log(bigVideo)
-
-    // bigVideo.classList.toggle("bigVideo")
-    // smallVideo.classList.toggle("smallVideo")
 
     bigVideo.style.transform = "rotateY(180deg)"
     smallVideo.style.transform = "rotateY(180deg)"
