@@ -1,0 +1,16 @@
+{
+  "name": "video_call",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browserify ./JS/videoChat.js -o bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "getusermedia": "^2.0.1",
+    "simple-peer": "^9.11.1"
+  }
+}

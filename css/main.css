@@ -1,0 +1,465 @@
+@font-face {
+    font-family: "cabinet";
+    src: url(../fonts/CabinetGrotesk-Regular.otf);
+}
+
+/* Creating the keyframes for the animation that will be applied to the modal on open and on close */
+/* The keyframe that will be applied on open of the modal */
+@keyframes slideIn {
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+/* The keyframe that will be applied on close of the modal */
+@keyframes slideOut {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(100%);
+    }
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "cabinet";
+    /* height: 100vh; */
+}
+
+/* Styling the header */
+header{
+    padding: 0px 70px;
+    height: 15vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    height: 100%;
+}
+
+#logo-div{
+    display: flex;
+    width: 50%;
+}
+
+#logo{
+    width: 100px;
+}
+
+#search-login-div{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+#nav-list{
+    list-style: none;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    padding: 0;
+}
+
+#nav-list a{
+    text-decoration: none;
+    color: #000000;
+}
+
+#search-div{
+    display: flex;
+    align-items: center;
+    border-bottom: 1.5px solid #000000;
+    width: 60%;
+}
+
+#search{
+    outline: none;
+    border: none;
+    width: 95%;
+    padding: 0px 10px;
+}
+
+#search::placeholder{
+    font-style: italic;
+}
+
+/* Styling the main page for all html pages */
+main{
+    display: flex;
+    padding: 0px 70px;
+    height: 85vh;
+}
+
+/* Styling the hero-section of the page */
+#deets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+#deets h1{
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 60px;
+    margin: 0;
+    max-width: 70%;
+}
+
+#deets-p{
+    font-size: 20px;
+    font-weight: 500;
+    max-width: 70%;
+}
+
+/* Styling for all forms */
+.start-join-convo-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* styling the start conversation form */
+#start-convo-form{
+    max-width: 70%;
+}
+
+#start-convo-form input{
+    width: 58%;
+}
+
+.start-join-convo-div input{
+    padding: 10px;
+    outline: none;
+    border: 2px solid #000000;
+    font-size: 15px;
+}
+
+.start-join-convo-div button{
+    color: #ffffff;
+    background-color: #171717;
+}
+
+#enter-code{
+    text-decoration: none;
+    color: #171717;
+    font-weight: bolder;
+}
+
+#join-p{
+    font-size: 15px;
+    margin: 20px 0px;
+}
+
+/* Styling the modal */
+#modal{
+    display: none;
+    position: fixed; 
+    z-index: 3; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4);
+}
+
+#join{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    height: 18vh;
+    width: 100%;
+    bottom: 0;
+    justify-content: center;
+    padding: 0px 70px;
+}
+
+/* styling the form in the modal */
+#join-convo-form{
+    display: flex;
+    flex-direction: row;
+    width: 32%;
+    justify-content: space-between;
+}
+
+#join-convo-form input ::placeholder{
+    color: black;
+    font-weight: bolder;
+}
+
+#join-convo-form input{
+    width: 58%;
+}
+
+#close-modal-btn{
+    width: 2.5%;
+    position: absolute;
+    right: 12%;
+}
+
+#close-modal-btn:hover{
+    cursor: pointer;
+}
+
+/* styling the image container on the hero section */
+#imgs{
+    display: flex;
+    width: 45%;
+}
+
+#imgs img{
+    width: 350px;
+    height: 450px;
+}
+#over-img{
+    position: absolute;
+    left: 57%;
+}
+
+/* styling the scroll and support icons on the hero section */
+#scroll-support-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+    position: absolute;
+    bottom: 5%;
+    right: 4%;
+}
+
+#scroll{
+    height: 40%;
+}
+
+/* styling the video chat page */
+#video-call-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 2%;
+    height: 12vh;
+}
+
+#video-title{
+    display: flex;
+    width: fit-content;
+}
+
+#video-title img{
+    width: 10%;
+    margin-right: 5px;
+}
+
+#user-Id-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+}
+
+#add-participant-btn{
+    font-size: 20px;
+}
+
+#title-userId h6{
+    margin: 0;
+    color: rgba(0, 0, 0, 0.44);
+}
+
+#user-Id, #other-Id{
+    outline: none;
+    border: none;
+    overflow: auto;
+}
+
+#video-call-main{
+    padding: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#video-call-div{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 55vw;
+    height: 100%;
+    display: flex;
+}
+
+/* #local-video{
+    border-radius: 16px;
+} */
+
+.bigVideo{
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    background-color: #171717;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+
+.smallVideo{
+    position: absolute;
+    width: 25%;
+    height: 30%;
+    bottom: 25px;
+    right: 25px;
+    border-radius: 16px;
+    object-fit: cover;
+    background-color: #171717;
+    transform: scaleX(-1);
+    z-index: 1;
+}
+
+#settings-div{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    height: fit-content;
+    left: 25%;
+    bottom: 50px;
+    z-index: 3;
+}
+
+.setting-icon{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(217, 217, 217, 0.39);
+    border-radius: 50%;
+}
+
+#end-call-btn{
+    background: #F34D4D;
+}
+
+#other-Id{
+    width: 62%;
+    box-shadow: 1px 1px 1px #171717;
+}
+
+#connect-form{
+    width: 60%;
+}
+
+#connect-btn{
+    width: 35%;
+    padding: 10px;
+}
+
+
+/* styling the chat box */
+#chat-div{
+    background: #F5F5F5;
+    border-radius: 16px;
+    width: 38%;
+    height: 100%;
+}
+
+#chat-header{
+    border-bottom: 2px solid #D9D9D9;
+    padding: 20px;
+    height: 10%;
+}
+
+#chat-header h2{
+    margin: 5px 0px 0px;
+    font-weight: bolder;
+}
+
+/* styling message box */
+#messages-div{
+    padding: 0px 20px;
+    height: 70%;
+    overflow-y: scroll;
+}
+
+.new-message-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+.profile-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #171717;
+    color: #F5F5F5;
+    font-weight: bolder;
+}
+
+.name-message-el{
+    width: 70%;
+}
+
+.name-el{
+    font-weight: bold;
+}
+
+.time-el{
+    font-weight: bold;
+}
+
+#message-input-div{
+    /* bottom: 0%; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#message-form{
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 15px;
+    padding:  5px;
+    width: 90%;
+}
+
+#message-form button{
+    color: #ffffff;
+    background-color: #171717;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#message-el{
+    outline: none;
+    border: none;
+    width: 90%;
+}
+
+.swal-button{
+    background: #171717;
+    color: #F5F5F5;
+}
+
+.swal-button:hover{
+    background-color: #171717;
+}
+
+@media screen and (max-width:767px){
+    body{
+        display: none;
+    }
+}

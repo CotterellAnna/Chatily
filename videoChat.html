@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/Logo.svg" type="image/x-icon">
+    <title>Chatily</title>
+</head>
+<body>
+    <header id="video-call-header">
+        <div id="video-title">
+            <img src="./images/back-icon.svg" alt="back-icon">
+            <h2 id="vcName">
+                Video Call Name
+            </h2>
+        </div>
+        <div id="user-Id-div">
+            <div id="title-userId">
+                <h6>User ID</h6>
+                <textarea name="user-ID" id="user-Id" cols="30" rows="2" readonly></textarea>
+            </div>
+            <img src="./images/copy-icon.svg" alt="copy-icon" id="copy-btn">
+            <i class="ri-user-add-line" id="add-participant-btn"></i>
+        </div>
+    </header>
+    <main id="video-call-main">
+        <div id="video-call-div">
+            <!-- <video id="local-video" src="#" autoplay muted></video> -->
+            <div id="settings-div">
+                <img src="./images/volume-icon.svg" alt="volume icon" class="setting-icon" id="mic-btn">
+                <img src="./images/video-icon.svg" alt="video icon" class="setting-icon" id="video-btn">
+                <img src="./images/end-call-icon.svg" alt="end call icon" class="setting-icon" id="end-call-btn">
+                <img src="./images/reaction-icon.svg" alt="reaction icon" class="setting-icon" id="reaction-btn">
+                <img src="./images/frame-icon.svg" alt="frame icon" class="setting-icon" id="frame-btn">
+            </div>
+        </div>
+        
+        <div id="chat-div">
+            <div id="chat-header">
+                <h2>Chat</h2>
+                <div id="typing-el"></div>
+            </div>
+            <div id="messages-div">
+            </div>
+            <div id="message-input-div">
+                <form id="message-form" autocomplete="off">
+                    <img src="./images/Subtract.svg" alt="emoji">
+                    <input type="text" id="message-el" placeholder="Type here..." readonly>
+                    <button type="submit" id="send-message-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div id ="modal">
+        <div id="join">
+            <img id="close-modal-btn" src="./images/close-modal.svg" alt="close-modal">
+            <form class="start-join-convo-div" id="connect-form">
+                <textarea name="user-ID" id="other-Id" cols="80" rows="2" placeholder="Enter participant ID" required></textarea>
+                <button id="connect-btn" type="submit">Connect</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./bundle.js"></script>
+</html>

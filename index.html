@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/Logo.svg" type="image/x-icon">
+    <title>Chatily</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo-div">
+                <img src="./images/Logo.svg" alt="logo" id="logo">
+            <ul id="nav-list">
+                <li class="item">
+                    <a href="#">About</a>
+                </li>
+                <li class="item">
+                    <a href="#">Case Studies</a>
+                </li>
+                <li class="item">
+                    <a href="#">Product</a>
+                </li>
+            </ul>
+            </div>
+            <div id="search-login-div">
+                <div id="search-div">
+                    <label for="search"><i class="ri-search-line"></i></label>
+                    <input type="search" name="search" id="search" placeholder="Search Here...">
+                </div>
+                <div id="login-div">
+                    <i class="ri-user-3-line"></i>
+                    login
+                </div>
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="deets">
+            <h1>
+                Meet friends, talk securely
+            </h1>
+            <p id="deets-p">
+                We help keep conversations clean, fun and secure. Chatily can be used for meeting and secure chats.
+            </p>
+            <form class="start-join-convo-div" id="start-convo-form">
+                <input type="text" name="meeting-name" id="meeting-name" placeholder="Meeting name..." required>
+                <button id="start-call" type="submit">Start a Conversation</button>
+            </form>
+            <p id="join-p">
+                Join a conversation? <a href="#" id="enter-code"><em id="modal-btn">Click here</em></a>
+            </p>
+        </div>
+        <div id="imgs">
+            <img src="./images/user-img1.svg">
+            <img src="./images/user-img2.svg" id="over-img">
+        </div>
+        <div id="scroll-support-div">
+            <img src="./images/Scroll.svg" alt="scroll" id="scroll">
+            <img src="./images/Support.svg" alt="Support">
+        </div>
+    </main>
+
+    <div id ="modal">
+        <div id="join">
+            <img id="close-modal-btn" src="./images/close-modal.svg" alt="close-modal">
+            <form class="start-join-convo-div" id="join-convo-form">
+                <input type="text" name="meeting-name" id="remote-meeting-name" placeholder="Meeting name..." required>
+                <button id="join-call-btn" type="submit">Join the conversation</button>
+            </form>
+        </div>
+    </div>
+    <script src="./JS/index.js"></script>
+</body>
+</html>
