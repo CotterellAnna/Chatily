@@ -21,12 +21,27 @@ const endCallBtn = document.getElementById("end-call-btn")
 const reactionBtn = document.getElementById("reaction-btn")
 const frameBtn = document.getElementById("frame-btn")
 const videoCallEl = document.getElementById("video-call-div")
+const welcomeMsg = document.getElementById("vcName")
 let remoteVideo
+
+//create html video element to hold the local video
 let localVideo = document.createElement("video")
+// mute the local video
+localVideo.muted = true
+//append the local video to DOM
 videoCallEl.appendChild(localVideo)
+
+//go back on click of back btn
+const backBtn = document.getElementById("back-btn")
+backBtn.addEventListener("click", () => {
+    window.history.back()
+})
 
 //get username form session storage
 let userData = JSON.parse(sessionStorage.getItem("data"))
+
+//set welcome message with username
+welcomeMsg.textContent = `Welcome, ${userData.username}`
 
 //adding the copy function to the copyBtn
 copyBtn.addEventListener("click", ()=>{
@@ -197,7 +212,6 @@ getusermedia(
 
             //creating and styling a video element that'll hold the stream (remote video)
             remoteVideo = document.createElement("video")
-            // remoteVideo.className = "bigVideo"
             videoCallEl.appendChild(remoteVideo)
 
             // display the stream received
@@ -211,10 +225,20 @@ getusermedia(
         let micCount = 0
         micBtn.addEventListener("click", ()=> {
             if(micCount == 0){
-                oAudioTrack[0].enabled = false
+                //mute the stream's audio track
+                oAudioTrack.forEach(track => {
+                    track.enabled = false
+                });
+                //change the icon
+                micBtn.src = "../images/mic-off.svg"
                 micCount = 1
             }else if(micCount == 1){
-                oAudioTrack[0].enabled = true
+                //unmute the stream's audio trac
+                oAudioTrack.forEach(track => {
+                    track.enabled = true
+                });
+                //change the icon
+                micBtn.src = "../images/volume-icon.svg"
                 micCount = 0
             }
         })
@@ -223,19 +247,23 @@ getusermedia(
         let VideoCount = 0
         videoBtn.addEventListener("click", ()=> {
             if(VideoCount == 0){
+                //disable the stream's video track
                 oVideoTrack[0].enabled = false
+                //change the icon
+                videoBtn.src = "../images/video-off.svg"
                 VideoCount = 1
             }else if(VideoCount == 1){
+                //enable the stream's video track
                 oVideoTrack[0].enabled = true
+                //change the icon
+                videoBtn.src = "../images/video-icon.svg"
                 VideoCount = 0
             }
         })
 
         endCallBtn.addEventListener("click", () => {
+            //destroy the peer
             peer.destroy()
-            //reseting the localvideo size
-            // videoSize(remoteVideo, localVideo)
-            // remoteVideo.remove()
         })
 
         //to swap the video call frames

@@ -253,9 +253,14 @@ main{
     width: fit-content;
 }
 
-#video-title img{
-    width: 10%;
+#back-btn{
+    width: 12%;
     margin-right: 5px;
+    cursor: pointer;
+}
+
+#back-btn:hover{
+    transform: scale(1.2);
 }
 
 #user-Id-div{
@@ -457,6 +462,12 @@ main{
 .swal-button:hover{
     background-color: #171717;
 }
+
+/* removing border from all buttons */
+button{
+    border: none;
+}
+
 
 @media screen and (max-width:767px){
     body{
